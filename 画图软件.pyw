@@ -1,7 +1,5 @@
-import turtle
-
-
 try:
+    import turtle
     from tkinter import *
     from tkinter import messagebox
     from turtle import *
