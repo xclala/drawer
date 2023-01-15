@@ -1,11 +1,7 @@
 on: [push]
 jobs:
-  build:
-    strategy:
-      matrix:
-        os: windows-latest
-      
-    runs-on: ${{ matrix.os }}
+  build:    
+    runs-on: windows-latest
     
     steps:
       - name: Check-out repository
