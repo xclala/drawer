@@ -26,7 +26,7 @@ jobs:
       - Name: Build Executable
         uses: Nuitka/Nuitka-Action@v0.4
         with:
-          script-name: 画图软件.pyw
+          script-name: main.pyw
           onefile: true
           standalone: true
           enable-plugins: tk-inter
