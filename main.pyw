@@ -1,16 +1,14 @@
 try:
-    import turtle
     from tkinter import *
-    from tkinter import messagebox
     from turtle import *
-    title("画图软件")
+    title("画图")
     t = Turtle()
     root = Tk()
     root.withdraw()
     t.hideturtle()
     t.speed(0)
-    a = Entry()
-    a.pack(side=LEFT, expand=True, fill=X)
+    a = StringVar()
+    Entry(textvariable=a).pack(side=LEFT, expand=True, fill=X)
 
     def fw():
         t.forward(int(a.get()))
@@ -33,12 +31,6 @@ try:
     def writ():
         t.write(a.get())
 
-    def ud():
-        t.undo()
-
-    def rst():
-        t.reset()
-
     def triangle():
         t.circle(int(a.get()), steps=3)
 
@@ -57,8 +49,8 @@ try:
     Button(text='圆', command=cc).pack(side=RIGHT)
     Button(text='颜色', command=pencr).pack(side=RIGHT)
     Button(text='粗细', command=pensz).pack(side=RIGHT)
-    Button(text='单步撤回', command=ud).pack(side=RIGHT)
-    Button(text='清空', command=rst).pack(side=RIGHT)
+    Button(text='单步撤回', command=t.undo).pack(side=RIGHT)
+    Button(text='清空', command=t.reset).pack(side=RIGHT)
     Button(text='三角形', command=triangle).pack(side=RIGHT)
     Button(text='正方形', command=square).pack(side=RIGHT)
     Button(text='五边形', command=five).pack(side=RIGHT)
